@@ -1,38 +1,88 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.AuComMap {
+  position: absolute;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  top: 25px;
+  left: 50%;
+  width: 50%;
+  transform: translate(-50%, 0);
 }
 
-.App-link {
-  color: #61dafb;
+.cmb-input {
+  width: 100%;
+  padding: 0.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.historybox {
+  position: absolute;
+  right: 25px;
+  top: 75px;
+  width: 280px;
+  height: 50%;
+  background-color: rgba(59, 61, 61, 0.74);
+  color: beige;
+  padding: 10px;
+}
+
+.cardlist {
+  position: relative;
+  width: 100%;
+  height: 35px;
+  border-left: 2px solid rgb(255, 170, 12);
+  margin: 3px;
+  padding: 8px;
+}
+
+.cardlist:hover {
+  background-color: rgba(255, 255, 255, 0.199);
+  width: 95%;
+}
+
+.timecapt {
+  position: relative;
+  font-size: 10px;
+  left: 5px;
+  bottom: -3px;
+  color: rgb(192, 192, 192);
+}
+
+.hiscapt {
+  position: relative;
+  font-size: 15px;
+  font-weight: bold;
+  left: 5px;
+  top: 0px;
+  color: rgb(192, 192, 192);
+}
+
+.HistBott{
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  width: 42px;
+  height: 42px;
+  background-color: rgba(53, 53, 53, 0.527);
+  text-align: center;
+  color: azure;
+  font-size: 32px;
+}
+
+.cpths{
+  position: relative;
+  top: 0px;
+  left: 25px;
+  width: 100%;
+  height: 25px;
+  text-align: left;
+  color: azure;
+  font-size: 18px;
+  margin: 0;
+}
+
+.iconhis {
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    width: 16px;
+    height: 16px;
 }

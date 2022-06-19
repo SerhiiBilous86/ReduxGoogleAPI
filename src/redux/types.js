@@ -1,0 +1,4 @@
+export const ADDPOINTMAP = 'ADDPOINTMAP';
+export const HISTPOINTMAP = 'HISTPOINTMAP';
+export const EDITPOINTMAP = 'EDITPOINTMAP';
+export const DELPOINTMAP = 'DELPOINTMAP';
