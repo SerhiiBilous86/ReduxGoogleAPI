@@ -1,0 +1,138 @@
+
+  const getUser = [{
+    userid: '325', // o user token
+    email: 'email1@gmail.com',
+    password: '123456',
+    password: '11/09/2022',
+    adult: 'true',
+  },
+  {
+    userid: '488', // o user token
+    email: 'email2@gmail.com',
+    password: '123456',
+    password: '20/02/2022',
+    adult: 'False',
+  },{
+    userid: '153', // o user token
+    email: 'email3@gmail.com',
+    password: '123456',
+    password: '10/06/2022',
+    adult: 'true',
+  }]
+
+  const service = [{
+    timestamp: 'timestamp',
+    service: '2', // tipo de usario
+    userid: '325', // o user token
+    MultimediaContent: [{
+      id: '56',
+      title: 'Cine 1',
+      streamingPrice: '20',
+      downloadPrice: '50',
+      duration: '240',
+      adult: 'true',
+      size: '2005',
+      additionalFee: '60',
+    },
+    { 
+      id: '232',
+      title: 'Cine 2',
+      streamingPrice: '20',
+      downloadPrice: '50',
+      duration: '240',
+      adult: 'true',
+      size: '2005',
+      additionalFee: '80'
+    },
+    { 
+      id: '234',
+      title: 'Cine 3',
+      streamingPrice: '20',
+      downloadPrice: '50',
+      duration: '240',
+      adult: 'true',
+      size: '2005',
+      additionalFee: '22'
+    },
+    { 
+      id: '978',
+      title: 'Cine 4',
+      streamingPrice: '20',
+      downloadPrice: '50',
+      duration: '240',
+      adult: 'true',
+      size: '2005',
+      additionalFee: '45'
+    }]
+  },
+
+  {
+    timestamp: 'timestamp',
+    service: '1',
+    userid: '488', // o user token
+    MultimediaContent: [{
+      id: '56',
+      title: 'Cine 1',
+      streamingPrice: '45',
+      downloadPrice: '95',
+      duration: '240',
+      adult: 'true',
+      size: '2005',
+      additionalFee: '60',
+    },
+    { 
+      id: '232',
+      title: 'Cine 2',
+      streamingPrice: '22',
+      downloadPrice: '45',
+      duration: '240',
+      adult: 'true',
+      size: '2005',
+      additionalFee: '80'
+    }]
+  }]
+
+    const StreamingService = 0;
+    const downloadService = 1;
+    const PremiumContent = 2;
+
+  class RegisteredUser {
+    constructor(services = []){
+      this.services = services;
+    }
+
+    getMultimediaContent(){
+
+      // axios , fetch 
+      // para sacar los datos de este usario desde usercart ( array con id content)
+
+      return this.services[0].MultimediaContent; // function con request de json content multimedia
+    }
+
+
+    getTotal(){
+      let total = 0;
+      
+      this.services.forEach(service => {
+        let multimediaContent = this.getMultimediaContent();
+
+        //if (service.userid == '325'){
+            // typeof parameter service son undefined, null , object, number , string , function ?!
+            for (var i = 0; i < multimediaContent.length; i++) {
+
+              if (service.service == StreamingService ){
+                total += parseInt(multimediaContent[i].streamingPrice);
+              } else if (service.service == downloadService) {
+                total += parseInt(multimediaContent[i].downloadPrice);
+              }
+
+              if (service.service == PremiumContent) {
+                total += parseInt(multimediaContent[i].additionalFee);
+              }
+            }
+        //}
+        
+      })
+      return total;
+    }
+  }
